@@ -565,6 +565,199 @@
 
     echo "The date 30 days from now wil l be: " . date("Y-m-d", strtotime("+30 days")) . "\n";
     ?>
+    <br>
+    <?php
+    // php arrays
+    $courses = array("PHP", "Laravel", "Node js", "React js");
+    echo "I like " . $courses[0] . ", " . $courses[1] . " and " . $courses[2] . ", " . $courses[3];
+    echo "<br>";
+    echo count($courses);
+
+    ?>
+    <br>
+    <!-- loop through indexed array -->
+    <?php
+
+    $courses = array("PHP", "Laravel", "Node js", "React js");
+    $courselength = count($courses);
+
+    for ($x = 0; $x < $courselength; $x++) {
+        echo $courses[$x];
+        echo "<br>";
+    }
+    ?>
+    <br>
+    <?php
+    $courses = array("PHP", "Laravel", "Node js", "React js");
+
+
+    foreach ($courses as $course) {
+        echo $course . "<br>";
+    }
+    ?>
+
+    <?php
+    $courses = array("INT220" => "PHP", "INT221" => "Laravel", "INT222" => "Node js");
+    echo "INT 220 is " . $courses["INT220"] . "INT 221 is " . $courses["INT221"];
+    ?>
+    <!-- associative array -->
+
+    <?php
+    $courses = array("INT220" => "PHP", "INT221" => "Laravel", "INT222" => "Node js");
+    foreach ($courses as $course => $value) {
+        echo "key=" . $course . "," . "value=" . $value;
+        echo "<br>";
+    }
+    ?>
+    <br>
+    <?php
+    $courses = array("INT220" => "PHP", "INT221" => "Laravel", "INT222" => "Node js");
+    $keys = array_keys($courses);
+    $values = array_values($courses);
+    for ($x = 0; $x < count($courses); $x++) {
+        echo " key=" . $keys[$x] . "," . "value=" . $values[$x] . "<br>";
+    }
+    ?>
+
+    <?php
+    $result = array(
+        array("Manoj", 7.8, "pass"),
+        array("Aditya", 8.5, "pass"),
+        array("Anuj", 4.9, "fail"),
+    );
+
+    echo $result[0][0] . " ---- CGPA is: " . $result[0][1] . "<br>";
+    echo $result[1][0] . " ---- CGPA is: " . $result[1][1] . "<br>";
+    echo $result[2][0] . " ---- CGPA is: " . $result[2][1] . "<br>";
+    ?>
+    <br>
+
+    <?php
+    $result = array(
+        array(
+            "name" => "Manoj",
+            "cgpa" => 7.8,
+            "status" => "Pass",
+        ),
+        array(
+            "name" => "Aditya",
+            "cgpa" => 8.5,
+            "status" => "Pass",
+        ),
+        array(
+            "name" => "Anuj",
+            "cgpa" => 4.9,
+            "status" => "Fail",
+        ),
+        array(
+            "name" => "Rahul",
+            "cgpa" => 6.2,
+            "status" => "Pass",
+        ),
+        array(
+            "name" => "Priya",
+            "cgpa" => 8.9,
+            "status" => "Pass",
+        ),
+        array(
+            "name" => "Sonia",
+            "cgpa" => 5.5,
+            "status" => "Fail",
+        )
+    );
+
+    echo $result[0]["name"] . " ---- CGPA is: " . $result[0]["cgpa"] . " ---- Status: " . $result[0]["status"] . "<br>";
+    echo $result[1]["name"] . " ---- CGPA is: " . $result[1]["cgpa"] . " ---- Status: " . $result[1]["status"] . "<br>";
+    echo $result[2]["name"] . " ---- CGPA is: " . $result[2]["cgpa"] . " ---- Status: " . $result[2]["status"] . "<br>";
+    echo $result[3]["name"] . " ---- CGPA is: " . $result[3]["cgpa"] . " ---- Status: " . $result[3]["status"] . "<br>";
+    echo $result[4]["name"] . " ---- CGPA is: " . $result[4]["cgpa"] . " ---- Status: " . $result[4]["status"] . "<br>";
+    echo $result[5]["name"] . " ---- CGPA is: " . $result[5]["cgpa"] . " ---- Status: " . $result[5]["status"] . "<br>";
+    ?>
+    <br>
+    <?php
+    $result = array(
+        array("Manoj", 7.8, "pass"),
+        array("Aditya", 8.5, "pass"),
+        array("Anuj", 4.9, "fail"),
+    );
+    for ($row = 0; $row < 3; $row++) {
+        echo "<h4>ROW number $row</h4>";
+        for ($col = 0; $col < 3; $col++) {
+            echo $result[$row][$col] . "<br>";
+        }
+    }
+    ?>
+    <br>
+    <?php
+    $a = array("INT219" => "front end web", "INT220" => "PHP", "INT221" => "Laravel");
+    $b = array("INT222" => "Node js", "CSE316" => "OS");
+    $c = ($a + $b);
+    var_dump($c);
+    echo "<br>";
+    var_dump($a == $b);
+    echo "<br>";
+    var_dump($a === $b);
+    echo "<br>";
+    var_dump($a != $b);
+    echo "<br>";
+    var_dump($a <> $b);
+    echo "<br>";
+    ?>
+    <br>
+
+    <?php
+    //  Creating an Indexed Array
+    $students = array("Manoj", "Aditya", "Anuj", "Rahul", "Priya");
+
+    // Counting Elements in the Indexed Array
+    echo "Total Students: " . count($students) . "<br>";
+
+    //  Removing an Element from the Indexed Array
+    unset($students[2]);
+
+    //  Reindexing the Array (Optional)
+    $students = array_values($students);
+
+    //  Displaying Updated Array
+    echo "Updated Students List:<br>";
+    for ($i = 0; $i < count($students); $i++) {
+        echo $students[$i] . "<br>";
+    }
+
+    // Counting Elements After Removal
+    echo "Total Students After Removal: " . count($students) . "<br>";
+    ?>
+
+    <br>
+
+    <?php
+    // Creating an Indexed Array
+    $students = array("Manoj", "Aditya", "Anuj");
+
+    // Accessing Elements in an Indexed Array
+    echo "First Student: " . $students[0] . "<br>";
+    echo "Second Student: " . $students[1] . "<br>";
+    echo "Third Student: " . $students[2] . "<br>";
+
+    // Looping Through an Indexed Array
+    echo "All Students:<br>";
+    for ($i = 0; $i < count($students); $i++) {
+        echo $students[$i] . "<br>";
+    }
+
+    // Adding Elements to an Indexed Array
+    $students[] = "Rahul";
+    $students[] = "Priya";
+
+    echo "Updated Students List:<br>";
+    for ($i = 0; $i < count($students); $i++) {
+        echo $students[$i] . "<br>";
+    }
+    ?>
+
+
+
+
 
 
 
