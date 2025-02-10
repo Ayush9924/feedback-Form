@@ -9,7 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
+<>
     <?php
     echo "hello \n";
     echo "<br>";
@@ -754,7 +754,170 @@
         echo $students[$i] . "<br>";
     }
     ?>
+    <br>
+    <?php
+    // array functions
+    // keys and values associative array
+    $name = array("Manoj", "Rahul", "Aneesh");
+    $marks = array("75", "89", "44");
+    $c = array_combine($name, $marks);
+    print_r($c);
 
+    ?>
+    <br>
+    <?php
+    // array_chunk()
+    $course = array("PHP", "Larvel", "Node.js", "Html", "java");
+    print_r(array_chunk($course, 2));
+    ?>
+    <br>
+    <?php
+    $course = array("a" => "PHP", "b" => "Larvel", "c" => "Node.js", "d" => "Html", "e" => "java");
+    print_r(array_chunk($course, 2));
+    echo "<br>";
+    ?>
+
+
+    <?php
+    $course = array("a" => "PHP", "b" => "Larvel", "c" => "Node.js", "d" => "Html", "e" => "java");
+    print_r(array_chunk($course, 2, true));
+    echo "<br>";
+    ?>
+    <br>
+    <?php
+    // array_count_values()
+    // it will directly count the value number time we used in array
+    $a = array("block 22", "block 33", "block 34", "block 34", "block 36");
+    print_r(array_count_values($a));
+    echo "<br>";
+    ?>
+
+    <?php
+    // array-diff()
+    // it will return the entrys and there difference 
+    $a1 = array("a" => "red", "b" => "green", "c" => "blue", "d" => "cyan", "e" => "yellow");
+    $a2 = array("f" => "red", "g" => "green", "h" => "blue");
+    $a3 = array("i" => "magreta", "j" => "seagreen");
+    $result = array_diff($a1, $a2);
+    $result1 = array_diff($a2, $a1);
+    print_r($result);
+    print_r($result1);
+    echo "<br>";
+    ?>
+
+    <?php
+    // array_flip()
+    // key will become value value will become key
+    $a1 = array("a" => "red", "b" => "green", "c" => "blue", "d" => "cyan", "e" => "yellow");
+    $result = array_flip($a1);
+    print_r($result);
+    echo "<br>";
+    ?>
+    <br>
+
+    <?php
+    // array_intersect()
+    $a1 = array("a" => "red", "b" => "green", "c" => "blue", "d" => "cyan", "e" => "yellow");
+    $a2 = array("f" => "red", "g" => "green", "h" => "blue");
+    $a3 = array("red", "blue");
+    $result = array_intersect($a1, $a2);
+    print_r(array_intersect($a1, $a2, $a3));
+    echo "<br>";
+
+    ?>
+
+    <?php
+    // array_merge()
+    $a1 = array("a" => "red", "b" => "green", "c" => "blue", "d" => "cyan", "e" => "yellow");
+    $a2 = array("f" => "red", "g" => "green", "h" => "blue");
+    print_r(array_merge($a1, $a2));
+
+    ?>
+
+    <?php
+    // array pop
+    // array push
+    $a1 = array("red", "green", "blue");
+    array_pop($a1);
+    print_r($a1);
+
+    ?>
+    <br>
+    <?php
+    $a1 = array("a" => "red", "b" => "green", "c" => "blue", "d" => "cyan", "e" => "yellow");
+    array_pop($a1);
+    echo "<br/>";
+    print_r($a);
+    ?>
+
+    <?php
+    // array_reverse
+    $a = array("a" => "Volve", "b" => "BMW", "c" => "Toyota");
+    print_r(array_reverse($a));
+
+    ?>
+    <br>
+    <?php
+    $a = array("volvo", "BMW", "Toyota");
+    echo "<br/>";
+    print_r(array_reverse($a, true));
+    echo "<br/>";
+    print_r(array_reverse($a));
+    ?>
+    <br>
+    <?php
+    // array_search()
+    $a1 = array("a" => "red", "b" => "green", "c" => "blue");
+    echo array_search("red", $a1);
+    ?>
+
+    <br>
+
+    <?php
+    $a1 = array("a" => "1", "b" => "1", "c" => "1");
+    echo "<br/>";
+    echo array_search(1, $a1, true);
+    echo "<br/>";
+    echo array_search(1, $a1);
+    ?>
+    <br>
+    <?php
+    // array_slice()
+    $a1 = array("a" => "red", "b" => "green", "c" => "blue", "d" => "cyan", "e" => "yellow");
+    print_r(array_slice($a1, 1, 2));
+    echo "<br>";
+
+    ?>
+    <?php
+    $a1 = array("red", "green", "yellow", "brown");
+    echo "<br/>";
+    print_r(array_slice($a1, 1, 2));
+    echo "<br>";
+    print_r(array_slice($a1, 1, 2, true));
+    ?>
+
+    <?php
+    $result = array(
+        array('name' => 'manoj', "cgpa" => 6.7, "status" => 'pass'),
+        array('name' => 'shalini', 'cgpa' => 9.8, 'status' => 'pass'),
+        array('name' => 'mani', "cgpa" => 3.2, "stauts" => 'fail')
+    );
+    $name = array_column($result, "name");
+    print_r($name);
+
+    ?>
+<br>
+    <?php
+    $result = array(
+        array('name' => 'manoj', "cgpa" => 6.7, "status" => 'pass'),
+        array('name' => 'shalini', 'cgpa' => 9.8, 'status' => 'pass'),
+        array('name' => 'mani', "cgpa" => 3.2, "stauts" => 'fail')
+    );
+    $name = array_column($result, "status", "name");
+    print_r($name);
+    echo "<br/>";
+
+    ?>
 
 
 
@@ -777,6 +940,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-</body>
+    </body>
 
 </html>
