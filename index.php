@@ -920,6 +920,20 @@
     ?>
 
 
+<?php
+$x = 5;
+function text(){
+    // $x=6;s
+    global $x;
+    echo $x;
+    echo"<br>";
+}
+text();
+echo $x ;
+?>
+
+
+
 
 
 
