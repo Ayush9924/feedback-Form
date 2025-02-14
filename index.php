@@ -906,7 +906,7 @@
     print_r($name);
 
     ?>
-<br>
+    <br>
     <?php
     $result = array(
         array('name' => 'manoj', "cgpa" => 6.7, "status" => 'pass'),
@@ -920,17 +920,38 @@
     ?>
 
 
-<?php
-$x = 5;
-function text(){
-    // $x=6;s
-    global $x;
+    <?php
+    $x = 5;
+    function text()
+    {
+        // $x=6;s
+        global $x;
+        echo $x;
+        echo "<br>";
+    }
+    text();
     echo $x;
-    echo"<br>";
-}
-text();
-echo $x ;
-?>
+    ?>
+
+    <br>
+    <!-- user define function -->
+    <?php
+    function name($Name, $roll_no)
+    {
+        echo "my name is $Name whose roll no is $roll_no";
+    }
+    name("ayush", 15);
+    echo $x;
+    ?>
+    <?php
+    
+
+
+    ?>
+
+
+     
+
 
 
 
