@@ -943,14 +943,59 @@
     name("ayush", 15);
     echo $x;
     ?>
+    <br>
+
     <?php
-    
+    function name1($name = "ayush", $roll_no = 11)
+    {
+        echo "the name of the student is $name whose roll num is $roll_no<br>";
 
+    }
+    name1("ayush", 10);
+    name1();
+    ?>
 
+    <?php
+    function add(int $a, int $b)
+    {
+        return $a + $b;
+    }
+    echo "addition of two numbers are : " . add(5, 10);
+    ?>
+    <br>
+
+    <?php
+    function addf(float $a, float $b)
+    {
+        return (int) (($a + $b));
+    }
+    echo "addition of two numbers are : " . add(7.25, 10.5);
+    ?>
+    <br>
+    <?php
+    function modifyvalue($num)
+    {
+        $num = $num + 20;
+        echo "inside function:$num";
+    }
+    $number = 12;
+    modifyvalue($number);
+    echo "Outside function: $number"
+        ?>
+    <br>
+    <?php
+    function modifyvalue2(&$num)
+    {
+        $num = $num + 20;
+        echo "inside function $num";
+
+    }
+    $number = 40;
+    modifyvalue($number);
     ?>
 
 
-     
+
 
 
 
